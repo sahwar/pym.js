@@ -181,6 +181,19 @@ $('.question').find('li').on('click', check_answer);
 var pymChild = new pym.Child();
 </code></pre>
                     </div>
+
+                    <div class="example-block">
+                        <h4>Example: Resizing after following links in the iframe</h4>
+                        <p>If you have links in your iframe that lead to other pages, you can maintain auto-resizing on the subsequent pages by explicitly setting the child ID in each one.</p>
+
+                        <div id="example-follow-links" class="example"></div>
+
+                        <h5>Javascript Needed on Every Child Page</h5>
+                        <pre><code>var pymChild = new pym.Child({id: "example-follow-links"});
+                        </code></pre>
+                        
+                    </div>
+
                 </section>
 
                 <section id="how">
@@ -262,6 +275,7 @@ function onNavigateMessage(url) {
         new pym.Parent('example-table', 'examples/table/child.html', {});
         new pym.Parent('example-graphic', 'examples/graphic/child.html', {});
         new pym.Parent('example-quiz', 'examples/quiz/child.html', {});
+        new pym.Parent('example-follow-links', 'examples/follow-links/child.html', {});
     </script>
 
     </body>
