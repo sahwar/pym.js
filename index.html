@@ -41,8 +41,16 @@
                 <section id="about">
                     <h2>About Pym.js</h2>
                     <p>Using iframes in a responsive page can be frustrating. It&rsquo;s easy enough to make an iframe&rsquo;s width span 100% of its container, but sizing its height is tricky &mdash; especially if the content of the iframe changes height depending on page width (for example, because of text wrapping or media queries) or events within the iframe.</p>
-                    <p><a href="https://raw.githubusercontent.com/nprapps/responsiveiframe/master/src/pym.js">Pym.js</a> embeds and resizes an iframe responsively (width <em>and</em> height) within its parent container. It also bypasses the usual cross-domain issues.</p>
+                    <p>Pym.js embeds and resizes an iframe responsively (width <em>and</em> height) within its parent container. It also bypasses the usual cross-domain issues.</p>
                     <p><strong>Use case:</strong> The NPR Visuals team uses Pym.js to embed small custom bits of code (charts, maps, etc.) inside our CMS without CSS or JavaScript conflicts. <a href="http://www.npr.org/2014/03/25/293870089/maze-of-college-costs-and-aid-programs-trap-some-families">See an example of this in action.</a></p>
+                </section>
+
+                <section id="download">
+                    <h2>Download Pym.js</h2>
+                    <ul>
+                        <li><a href="dist/pym.js">Uncompressed</a> (16 KB)</li>
+                        <li><a href="dist/pym.min.js">Compressed</a> (4 KB)</li>
+                    </ul>
                 </section>
 
                 <section id="requirements">
@@ -68,11 +76,20 @@
                     <p>Internet Explorer versions earlier than 9 are not supported.</p>
                 </section>
 
-                <section id="install">
+                <section id="install-bower">
                     <h3>Installing with Bower</h3>
                     <p>If you use <a href="http://bower.io/">Bower</a> to manage your Javascript dependencies then you can install Pym.js by running:</p>
 
                     <p><code>bower install pym.js</code></p>
+
+                    <p>Otherwise you can just copy <code>pym.js</code> into your codebase like you would any other javascript library.</p>
+                </section>
+
+                <section id="install-npm">
+                    <h3>Installing with NPM</h3>
+                    <p>If you use <a href="http://npmjs.org/">NPM</a> to manage your Javascript dependencies then you can install Pym.js by running:</p>
+
+                    <p><code>npm install pym.js</code></p>
 
                     <p>Otherwise you can just copy <code>pym.js</code> into your codebase like you would any other javascript library.</p>
                 </section>
@@ -189,7 +206,7 @@ var pymChild = new pym.Child();
                         <div id="example-follow-links" class="example"></div>
 
                         <h5>Javascript Needed on Every Child Page</h5>
-                        <pre><code>var pymChild = new pym.Child({id: "example-follow-links"});
+                        <pre><code>var pymChild = new pym.Child({ id: 'example-follow-links' });
                         </code></pre>
                         
                     </div>
