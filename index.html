@@ -208,7 +208,7 @@ var pymChild = new pym.Child();
                         <h5>Javascript Needed on Every Child Page</h5>
                         <pre><code>var pymChild = new pym.Child({ id: 'example-follow-links' });
                         </code></pre>
-                        
+
                     </div>
 
                 </section>
@@ -235,7 +235,7 @@ var pymChild = new pym.Child();
                 <section id="custom-events">
                     <h3>Sending Custom iFrame Events</h3>
 
-                    <p>Although not its original purpose, pym.js can also be used to send and receive generic event data between the iframe parent and child. A simple, jQuery-like event binding model is used to support this message passing.</p> 
+                    <p>Although not its original purpose, pym.js can also be used to send and receive generic event data between the iframe parent and child. A simple, jQuery-like event binding model is used to support this message passing.</p>
 
                     <p>In the following example a click on the link in the parent container will navigate the child frame to a new location.</p>
 
@@ -262,6 +262,20 @@ function onNavigateMessage(url) {
 </code></pre>
 
                     <p>Note that the reverse scenario can be performed as well; children can send messages to the parent with the same <code>sendMessage()</code> function.</p>
+
+                    <h3>Shortcuts for navigating the parent from the child</h3>
+
+                    <p>As scrolling and navigating the parent window is a very common need, there are shortcuts for these actions that do not require you to implement your own events.</p>
+
+                    <h5>Code to scroll and navigate the parent</h5>
+
+<pre><code>pymChild.scrollParentTo('about');
+pymChild.navigateParentTo('https://github.com/nprapps/pym.js');
+</code></pre>
+
+                    <div id="example-navigation" class="example"></div>
+
+
                 </section>
 
                 <section id="in-the-wild">
@@ -299,6 +313,7 @@ function onNavigateMessage(url) {
         new pym.Parent('example-graphic', 'examples/graphic/child.html', {});
         new pym.Parent('example-quiz', 'examples/quiz/child.html', {});
         new pym.Parent('example-follow-links', 'examples/follow-links/child.html', {});
+        new pym.Parent('example-navigation', 'examples/navigation/child.html', {});
     </script>
 
     </body>
