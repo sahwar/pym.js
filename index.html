@@ -103,7 +103,7 @@
                         <ul>
                             <li>Name your containing div (or any other block-level element) with a unique ID.</li>
                             <li>Include <code>pym.js</code>. <em>Only once per page.</em></li>
-                            <li>Create a <code>new pym.Parent(parent_id, child_url);</code> for <em>each</em> responsive iframe.</li>
+                            <li>Create a <code>new pym.Parent(parent_id, child_url);</code> for <em>each</em> responsive iframe. (Pym will create the actual iframe element.)</li>
                             <li>Optional: To filter incoming message domains, you can pass in a regex. For example: <code>pym.Parent('example', 'child.html', { xdomain: '*\.npr\.org' });</code></li>
                         </ul>
 
