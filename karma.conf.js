@@ -15,8 +15,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'dist/pym-v1.0.0.js',
-      'test/*.js'
+      'src/pym.js',
+      'test/*.js',
+      'test/html-fixtures/*.html',
+      {pattern: "test/html/*.html", watched: false, included: false, served: true}
     ],
 
 
@@ -28,6 +30,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'test/html-fixtures/*.html': ['html2js']
     },
 
 
@@ -65,14 +68,17 @@ module.exports = function(config) {
       }
     },
 
-
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    client: {
+      useIframe: true
+    }
   };
 
   if(process.env.TRAVIS){
